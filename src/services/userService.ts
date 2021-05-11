@@ -4,7 +4,6 @@
     VAGY
         - DAO-kat vagy Repository-kat használhat
 */
-
 export function findAllUsers() {
     const users = [
         {
