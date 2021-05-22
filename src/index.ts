@@ -1,13 +1,15 @@
+import dotenv from 'dotenv';
 import http from 'http';
 import express from 'express';
 
 import getAllUsers from './routes/getAllUsers';
 
+const configuration = dotenv.config();
 const app = express();
 app.use(express.json());
 
 const server = new http.Server(app);
-server.listen(3001);
+server.listen(configuration?.parsed?.PORT);
 
 app.use((request, response, next) => {
     response.header("Access-Control-Allow-Origin", "*");
